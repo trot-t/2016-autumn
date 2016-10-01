@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T2A] {fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\title{Практическая работа №1}
+\author{Студент гр. 6872 Юрий Зверев}
+\begin{document}
+\maketitle
+
+$
+28_{10}=11100_2   
+$
+
+$
+$
+
+$
+\frac{28}{2} = 14,0\mathrm}нет отстатка \Rightarrow 0
+$
+
+$
+$
+
+$
+\frac{14}{2}= 7,0\mathrm}нет остатка \Rightarrow 0
+$
+ 
+$
+$
+
+$
+\frac{7}{2}= 3,5\mathrm} остаток есть\Rightarrow 1
+$
+
+$
+$
+
+$
+\frac{3}{2}= 1,5\mathrm}остаток есть\Rightarrow 1
+$
+
+$
+$
+
+$
+\frac{1}{2}= 0,5\mathrm}остаток есть\Rightarrow 1
+$
+
+$
+
+$
+
+$
+11100_2 = 28_{10}
+$
+
+$
+$
+
+$
+1\cdot2^4+1\cdot2^3+1\cdot2^2+1\cdot0^1+1\cdot0^0 = 28
+$
+
+\end{document}
