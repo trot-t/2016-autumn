@@ -2,20 +2,29 @@
 6871/*.aux
 6872/*.log
 6872/*.aux
+6871/6871_address.tex
+6872/6872_address.tex
+
 practice1.pdf
 practice1.tex
+praktika/*.aux
+praktika/*.log
 
 6871/Bochkareva/*.log
 681/Bochkareva/*.aux
 6871/Zhuravlev/*.log
 6871/Zhuravlev/*.aux
 6871/Uvin/*.log
-6871/Uvin/*aux
+6871/Uvin/*.aux
+6871/Frolov/*.log
+6871/Frolov/*.aux
 
 6872/Belkov/*.log
 6872/Belkov/*.aux
 6872/Burdin/*.log
 6872/Burdin/*.aux 
+6872/Vanchugov/*.log
+6872/Vanchugov/*.aux
 6872/Logazyak/*.log
 6872/Logazyak/*.aux
 6872/Nagornykh/*.log
