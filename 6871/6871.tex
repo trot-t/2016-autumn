@@ -36,15 +36,20 @@
 
 
 \newcommand*\OK{&\small \ding{51}$\!\!_\circ$} % начал защищать
+\newcommand*\Ok{&\small \ding{51}$\!\!_\circ$} % начал защищатi
 \newcommand*\ok{&{\small \ding{51}}} % присутствовал
 \newcommand*\oK{&{\small \ding{51}?}} % присутствовал?
 \newcommand*\no{&{\small }} % отсутствовал
 \newcommand*\D{\tiny\ding{48}} % защита, defend
 \newcommand*\da{&{\small\ding{48}$\!\!_1$}} % защита, defend
 \newcommand*\dab{&{\small\ding{48}$\!\!_{12}$}} % защита, defend
+\newcommand*\ab{&{\small\ding{48}$\!\!_{12}$}} % защита, defend
+\newcommand*\bc{&{\small\ding{48}$\!\!_{12}$}} % защита, defend
 \newcommand*\dabc{&{\small\ding{48}$\!\!_{123}$}} % защита, defend
 \newcommand*\db{&{\small\ding{48}$\!\!_2$}} % защита, defend
 \newcommand*\dc{&{\small\ding{48}$\!\!_3$}} % защита, defend
+\newcommand*\dd{&{\small\ding{48}$\!\!_4$}} % защита, defend
+\newcommand*\bd{&{\small\ding{48}$\!\!_{234}$}} % защита, defend
 \newcommand*\Skip{\noindent\rule{0.3cm}{0.9pt}}
 
 
@@ -79,30 +84,31 @@
 &\rotatebox{90}{\rlap{\small 27 сентября (лек.)}}
 &\rotatebox{90}{\rlap{\small 4 октября (лек.)}}
 &\rotatebox{90}{\rlap{\small 4 октября (прак.)}}
-&&&&&&&&\\
+&\rotatebox{90}{\rlap{\small 10 октября (прак.)}}
+&&&&&&&\\
 \midrule
- 1&Аникин Е.А.     \ok\ok\no\ok\no&30\no  \no\OK& 55&&&&&&&&\\
- 2&Басаревский Д.В.\ok\ok\ok\ok\no\no\da  \ok\ok&110&&&&&&&&\\
- 3&Бочкарёва Е.А.  \ok\ok\ok\ok\OK\ok\dab \ok\OK& 85&&&&&&&&\\
- 4&Вайман А.И.     \no\no\no\ok\OK&07\ok  \ok\OK&110&&&&&&&&\\
- 5&Веренев А.А.    \no\no\no\no\ok\no\no  \ok\ok \no&&&&&&&&\\
- 6&Гусманова Л.Р.  \ok\ok\da\ok\no\no\no  \no\no \no&&&&&&&&\\
- 7&Журавлев А.Ю.   \no\no\no\no\ok&12\ok  \ok\OK&105&&&&&&&&\\
- 8&Кочкин Д.А.     \no\no\no\no\ok\ok\no  \ok\no \no&&&&&&&&\\
- 9&Кудрявцев М.В.  \no\no\ok\ok\no\no\no  \ok\ok& 80&&&&&&&&\\
-10&Лебедев П.Г.    \ok\ok\no\ok\ok&31\no  \ok\no \no&&&&&&&&\\
-11&Макеев Л.А.     \ok\ok\ok\ok\OK&05\ok  \ok\ok& 80&&&&&&&&\\
-12&Михайлов С.А.   \no\no\ok\ok\ok&21\no  \ok\ok&125&&&&&&&&\\
-13&Осокина С.С.    \ok\ok\ok\ok\no\no\ok  \ok\OK&115&&&&&&&&\\
-14&Семёнов С.Н.    \ok\ok\ok\ok\OK&04\ok  \ok\OK&100&&&&&&&&\\
-15&Силаев Р.О.     \ok\ok\no\no\no\no\no  \no\ok& 60&&&&&&&&\\
-16&Синицин А.В.    \ok\ok\no\ok\no\no\no  \no\no \no&&&&&&&&\\
-17&Терентьев А.И.  \ok\ok\ok\ok\no\no\no  \no\ok&120&&&&&&&&\\
-18&Увин С.С.       \ok\ok\ok\ok\OK&06\da  \ok\OK& 95&&&&&&&&\\
-19&Фесько В.В.     \no\no\no\no\no\no\no  \no\no \no&&&&&&&&\\
-20&Фролов С.С.     \ok\ok\ok\ok\OK&16\dabc\ok\OK&115&&&&&&&&\\ 
-21&Шкуридин И.С.   \ok\ok\ok\ok\ok\no\ok  \ok\OK& 85&&&&&&&&\\
-22&Яценко А.В.     \ok\ok\ok\ok\OK&03\ok  \ok\ok& 50&&&&&&&&\\ 
+ 1&Аникин Е.А.     \ok\ok\no\ok\no&30\no  \no\OK& 55\no&&&&&&&\\
+ 2&Басаревский Д.В.\ok\ok\ok\ok\no\no\da  \ok\ok&110\ok&&&&&&&\\
+ 3&Бочкарёва Е.А.  \ok\ok\ok\ok\OK\ok\dab \ok\OK& 85\dc&&&&&&&\\
+ 4&Вайман А.И.     \no\no\no\ok\OK&07\ok  \ok\OK&110\da&&&&&&&\\
+ 5&Веренев А.А.    \no\no\no\no\ok\no\no  \ok\ok \no\no&&&&&&&\\
+ 6&Гусманова Л.Р.  \ok\ok\da\ok\no\no\no  \no\no \no\no&&&&&&&\\
+ 7&Журавлев А.Ю.   \no\no\no\no\ok&12\ok  \ok\OK&105\da&&&&&&&\\
+ 8&Кочкин Д.А.     \no\no\no\no\ok\ok\no  \ok\no \no\Ok&&&&&&&\\
+ 9&Кудрявцев М.В.  \no\no\ok\ok\no\no\no  \ok\ok& 80\ok&&&&&&&\\
+10&Лебедев П.Г.    \ok\ok\no\ok\ok&31\no  \ok\no \no\no&&&&&&&\\
+11&Макеев Л.А.     \ok\ok\ok\ok\OK&05\ok  \ok\ok& 80\Ok&&&&&&&\\
+12&Михайлов С.А.   \no\no\ok\ok\ok&21\no  \ok\ok&125\ok&&&&&&&\\
+13&Осокина С.С.    \ok\ok\ok\ok\no\no\ok  \ok\OK&115\da&&&&&&&\\
+14&Семёнов С.Н.    \ok\ok\ok\ok\OK&04\ok  \ok\OK&100\ab&&&&&&&\\
+15&Силаев Р.О.     \ok\ok\no\no\no\no\no  \no\ok& 60\da&&&&&&&\\
+16&Синицин А.В.    \ok\ok\no\ok\no\no\no  \no\no \no\no&&&&&&&\\
+17&Терентьев А.И.  \ok\ok\ok\ok\no\no\no  \no\ok&120\no&&&&&&&\\
+18&Увин С.С.       \ok\ok\ok\ok\OK&06\da  \ok\OK& 95\bd&&&&&&&\\
+19&Фесько В.В.     \no\no\no\no\no\no\no  \no\no \no\no&&&&&&&\\
+20&Фролов С.С.     \ok\ok\ok\ok\OK&16\dabc\ok\OK&115\ok&&&&&&&\\ 
+21&Шкуридин И.С.   \ok\ok\ok\ok\ok\no\ok  \ok\OK& 85\ok&&&&&&&\\
+22&Яценко А.В.     \ok\ok\ok\ok\OK&03\ok  \ok\ok& 50\ok&&&&&&&\\ 
 \bottomrule
 \end{tabular} 
 \newpage
@@ -118,7 +124,7 @@
 Вайман А.И.     &02.10&\\
 Веренев А.А.    &     &\\
 Гусманова Л.Р.  &     &\\
-Журавлев А.Ю.   &25.09&\\
+Журавлев А.Ю.   &25.09&10.10\\
 Кочкин Д.А.     &     &\\
 Кудрявцев М.В.  &     &\\
 Лебедев П.Г.    &     &\\
