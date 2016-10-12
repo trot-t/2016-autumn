@@ -36,13 +36,15 @@
 
 
 \newcommand*\OK{&\small \ding{51}$\!\!_\circ$} % начал защищать
+\newcommand*\Ok{&\small \ding{51}$\!\!_\circ$} % начал защищать
 \newcommand*\oK{&{\tiny\ding{51}}} % присутствовал(опоздал)
 \newcommand*\ok{&{\small\ding{51}}} % присутствовал
 \newcommand*\no{&{\small }} % отсутствовал
 \newcommand*\D{&{\tiny\ding{48}}} % защита, defend
 \newcommand*\da{&{\small\ding{48}$\!\!_1$}} % защита, defend
-\newcommand*\db{\tiny\ding{48}$\!\!2$} % защита, defend
-\newcommand*\dc{\tiny\ding{48}$\!\!3$} % защита, defend
+\newcommand*\db{&{\tiny\ding{48}$\!\!_2$}} % защита, defend
+\newcommand*\bc{&{\small\ding{48}$\!\!_{23}$}} % защита, defend
+\newcommand*\dc{\tiny\ding{48}$\!\!_3$} % защита, defend
 \newcommand*\Skip{\noindent\rule{0.3cm}{0.9pt}}
 
 
@@ -80,30 +82,32 @@
 &\rotatebox{90}{\rlap{\small 27 сентября (лек.)}}
 &\rotatebox{90}{\rlap{\small 4 октября (прак.)}}
 &\rotatebox{90}{\rlap{\small 6 октября (лаб.)}}
-&&&&&&&&\\
+&\rotatebox{90}{\rlap{\small 11 октября (лаб.)}}
+&\rotatebox{90}{\rlap{\small 11 октября (лек.)}}
+&&&&&&\\
 \midrule
 %Аушев Т.М.       \no\no\no\no\no\no&&&&&&&&&&&\\
- 1& Белков А.А.      \ok\ok\OK\ok&29&-2\no\no& 95\ok&&&&&&&\\ %Б+елков
- 2& Бурдин К.В.      \ok\ok\oK\ok&24\ok\ok\ok& 55\ok&&&&&&&\\
- 3& Ванчугов Е.О.    \ok\ok\da\ok&13\no\no\ok& 60\ok&&&&&&&\\ % Ванчуг+ов
- 4& Верстакова П.В.  \ok\ok\ok\ok&10\no\no\no&130\no&&&&&&&\\
- 5& Дементьев В.А.   \ok\ok\ok\ok&19\no\OK\ok& 75\no&&&&&&&\\
- 6& Зверев Ю.Ю.      \ok\ok\ok\ok&28\da\ok\ok& 65\ok&&&&&&&\\
- 7& Зубко А.Б.       \ok\no\ok\ok\no\no\ok\ok \no\no&&&&&&&\\ 
- 8& Исаков К.С.      \ok\ok\ok\ok&15\no\OK\ok&100\no&&&&&&&\\
- 9& Крюкова А.Д.     \ok\ok\ok\ok&11\OK\da\ok&125\ok&&&&&&&\\
+ 1& Белков А.А.      \ok\ok\OK\ok&29&-2\no\no& 95\ok\Ok\ok&&&&&\\ %Б+елков
+ 2& Бурдин К.В.      \ok\ok\oK\ok&24\ok\ok\ok& 55\ok\no\ok&&&&&\\
+ 3& Ванчугов Е.О.    \ok\ok\da\ok&13\no\no\ok& 60\ok\bc\ok&&&&&\\ % Ванчуг+ов
+ 4& Верстакова П.В.  \ok\ok\ok\ok&10\no\no\no&130\no\no\no&&&&&\\
+ 5& Дементьев В.А.   \ok\ok\ok\ok&19\no\OK\ok& 75\no\Ok\ok&&&&&\\
+ 6& Зверев Ю.Ю.      \ok\ok\ok\ok&28\da\ok\ok& 65\ok\Ok\ok&&&&&\\
+ 7& Зубко А.Б.       \ok\no\ok\ok\no\no\ok\ok \no\no\no\no&&&&&\\ 
+ 8& Исаков К.С.      \ok\ok\ok\ok&15\no\OK\ok&100\no\ok\ok&&&&&\\
+ 9& Крюкова А.Д.     \ok\ok\ok\ok&11\OK\da\ok&125\ok\Ok\ok&&&&&\\
 % & Куропаткин С.    \no\no\no\no\no\no&&&&&&&&&\
-10& Логазяк В.Ю.(ст.)\ok\ok\da\ok&08\no\ok\ok&120\ok&&&&&&&\\
-11& Малыхин С.А.     \ok\no\ok\ok&14\no\no\no \no\no&&&&&&&\\
-12& Мошкин К.        \ok\ok\ok\ok&20\ok\no\no \no\no&&&&&&&\\
-13& Нагорных В.А.    \ok\ok\ok\ok&21\ok\ok\ok& 30\ok&&&&&&&\\
+10& Логазяк В.Ю.(ст.)\ok\ok\da\ok&08\no\ok\ok&120\ok\Ok\ok&&&&&\\
+11& Малыхин С.А.     \ok\no\ok\ok&14\no\no\no \no\no\ok\ok&&&&&\\
+12& Мошкин К.        \ok\ok\ok\ok&20\ok\no\no \no\no\no\ok&&&&&\\
+13& Нагорных В.А.    \ok\ok\ok\ok&21\ok\ok\ok& 30\ok&-2\ok&&&&&\\
 %Рыжова К.В.      \no\no\no\no\no\no&&&&&&&&&\\
-14& Симачeв М.А.     \ok\ok\OK\ok&09\da\no\no& 50\no&&&&&&&\\
-15& Старцев Д.В.     \ok\ok\ok\ok&25\ok\ok\ok& 65\ok&&&&&&&\\
-16& Сурин Ю.А.       \ok\ok\ok\ok&26&-2\OK\ok& 60\ok&&&&&&&\\
-17& Толпугова Ж.А.   \no\no\no\no&23\ok\no\no \no\no&&&&&&&\\
-18& Файзиев Г.В.     \ok\ok\ok\ok&27\ok\ok\ok&105\ok&&&&&&&\\
-19& Черкашин Р.      \ok\ok\ok\ok\no\no\no\no& 75\no&&&&&&&\\ 
+14& Симачeв М.А.     \ok\ok\OK\ok&09\da\no\no& 50\no\no\no&&&&&\\
+15& Старцев Д.В.     \ok\ok\ok\ok&25\ok\ok\ok& 65\ok\Ok\ok&&&&&\\
+16& Сурин Ю.А.       \ok\ok\ok\ok&26&-2\OK\ok& 60\ok\ok\ok&&&&&\\
+17& Толпугова Ж.А.   \no\no\no\no&23\ok\no\no \no\no\no\no&&&&&\\
+18& Файзиев Г.В.     \ok\ok\ok\ok&27\ok\ok\ok&105\ok\ok\ok&&&&&\\
+19& Черкашин Р.      \ok\ok\ok\ok\no\no\no\no& 75\no\ok\ok&&&&&\\ 
 \bottomrule
 \end{tabular} 
 
@@ -113,7 +117,7 @@
 \toprule
 & пр.№1 & пр.№2 \\
 \midrule
-Белков А.А.    &27.09$-2$&     \\   
+Белков А.А.    &27.09$-2$&11.10\\   
 Бурдин К.В.    &30.09    &     \\
 Ванчугов Е.О.  &02.10    &     \\
 Верстакова П.В.&         &     \\
