@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tikz}
+\usepackage[european,cuteinductors,smartlabels]{circuitikz}
+\title{Практическая работа №4}
+\author{студент:    группы    }
+% Конец преамбулы
+\begin{document}
+\maketitle
+\begin{tikzpicture}
+\newcommand{\xb}{-3}
+\newcommand{\xa}{3}
+\draw[thin, ->] (-6,0) -- (6,0) node[right] {$X$};
+\draw[thin, ->] (0,-6) -- (0,6) node[left] {$Y$};
+\foreach \x\xtext in {-5/-5,5/5,{\xb}/\xb,{\xa}/{\displaystyle \frac{-b+\sqrt{b^2-4ac}}{2a}}} % 
+   \draw (\x,0.1) -- (\x,-0.1) node[below] {$\xtext$};
+
+ \draw[domain=-5:5, help lines, smooth]
+        plot ({\x},{0.2*(\x-\xa)*(\x-\xb)});
+\end{tikzpicture}
+\end{document}
