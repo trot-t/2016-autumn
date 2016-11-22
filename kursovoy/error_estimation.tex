@@ -1,0 +1,315 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[utf8x]{inputenc}
+\usepackage[english,ukrainian,russian]{babel}
+\usepackage{amssymb,amsmath}
+
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage[american,cuteinductors,smartlabels]{circuitikz}
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{error_estimation.bib}
+
+\usepackage[]{hyperref}
+\hypersetup{
+    colorlinks=true,
+}
+
+\author{ Прокшин Артем \\
+\small ЛЭТИ\\
+\small \texttt{taybola@gmail.com}}
+
+\title{Оценка погрешности}
+\date{}
+
+\begin{document}
+\maketitle
+%\skippage
+%\chapter{}
+\section{разделённые разности}
+В ссылке \cite{raznosty} дается понятие разделённых разностей.
+
+функция $f$ задана на множестве попарно различных точек $x_0,\;\ldots,\;x_n \in X.$
+ 
+Тогда
+разделённой разностью нулевого порядка функции $f$ в точке $x_j$ называют значение $f(x_j) ,$ а разделённую разность порядка $k$ для системы точек $(x_j, \; x_{j+1}, \; \ldots, \; x_{j+k})$ определяют через разделённые разности порядка $(k-1)$ по формуле
+
+$$
+f(x_j; \; x_{j+1}; \; \ldots; \; x_{j+k-1}; \; x_{j+k}) = \frac{f(x_{j+1}; \; \ldots; \; x_{j+k-1}; \; x_{j+k}) - f(x_{j}; \; x_{j+1};\;\ldots;\;x_{j+k-1})}{x_{j+k}-x_{j}}
+$$
+
+в частности,
+
+$$f(x_0;\;x_1)=\frac{f(x_1)-f(x_0)}{x_1-x_0} ,$$
+
+$$f(x_0;\;x_1;\;x_2)=\frac{f(x_1;\;x_2)-f(x_0;\;x_1)}{x_2-x_0}=\dfrac{\dfrac{f(x_2)-f(x_1)}{x_2-x_1}-\dfrac{f(x_1)-f(x_0)}{x_1-x_0}}{x_2-x_0} ,$$
+
+$$f(x_0;\;x_1;\;\ldots;\;x_{n-1};\;x_n) = \frac{f(x_1;\;\ldots;\;x_{n-1};\;x_n) - f(x_0;\;x_1;\;\ldots;\;x_{n-1})}{x_n-x_0} .$$
+
+Для разделённой разности верна формула
+
+$$f(x_0;\;x_1;\;\ldots;\;x_n)=\sum_{j=0}^n\dfrac{f(x_j)}{\prod\limits_{i=0\atop i\neq j}^n(x_j-x_i)},$$
+
+в частности,
+
+$$f(x_0;\;x_1)=\frac{f(x_1)}{x_1-x_0}+\frac{f(x_0)}{x_0-x_1} ,$$
+
+$$f(x_0;\;x_1;\;x_2) = \frac{f(x_2)}{(x_2-x_1)(x_2-x_0)}+\frac{f(x_1)}{(x_1-x_2)(x_1-x_0)}+\frac{f(x_0)}{(x_0-x_2)(x_0-x_1)} .$$
+
+\section{интерполяционный полином Лагранжа}
+Лагранж, Жозеф Луи предложил для интерполяции использовать многочлен вида:
+$$
+L(x) = \sum_{i=0}^n y_i l_i(x)
+$$
+
+где базисные полиномы определяются по формуле:
+
+$$l_i(x)=\prod_{j=0, j\neq i}^{n} \frac{x-x_j}{x_i-x_j} = \frac{x-x_0}{x_i-x_0} \cdots \frac{x-x_{i-1}}{x_i-x_{i-1}} \cdot \frac{x-x_{i+1}}{x_i-x_{i+1}} \cdots \frac{x-x_{n}}{x_i-x_{n}}\,\!$$
+
+где $l_i(x)$ обладают следующими свойствами:
+\begin{itemize}
+\item являются многочленами степени $n$
+\item $l_i(x_i) = 1$
+\item $l_i(x_j) = 0$ при $j \neq i$
+\end{itemize}
+
+
+\section{оценка погрешности при интерполяции полиномом Лагранжа}
+В работе \cite{spline2} (стр.32)  дается строгая оценка погрешнисти при интерполяции полиномом Лагранжа.
+
+
+Погрешность удобно представить в следующем виде
+\footnote{$\mathcal{P}_n(x)$ -- интерполяционный полином Лагранже}
+:
+
+\begin{equation}
+y(x) - \mathcal{P}_n(x) = \omega_n(x) r(x),
+\hspace{2cm}
+\omega_n(x) = \prod\limits_{i=0}^n (x-x_i)
+\label{pogreshnost}
+\end{equation}
+ибо эта погрешность заведомо равна нулю во всех узлах интерполяции.
+Введем вспомогательную функцию $q(\xi) = y(\xi) - \mathcal{P}_n(x) - \omega_n(x) r(x)$,
+где $x$ играет роль параметра и принимает любое фиксированное значение.
+Очевидно, $q(\xi) = 0$ при $\xi=x_0,x_1,...x_n$ и при $\xi=x$, т.е. обращается в нуль
+в $n+2$ точках.
+
+Предположим, что $y(x)$ имеет в $n+1$ непрерывную производную; тогда то же справедливо
+для $q(\xi)$. Между двумя нулями гладкой функции лежит нуль её производной.
+Последовательно применяя это правило, получим, что между крайними из $n+2$ нулей функции
+лежит $n+1$ нуль производной. Но $q^(n+1)(\xi) = y^(n+1)(\xi) - (n+1)! r(x)$,
+\footnote{выражение $y^{(n)}(x)$ означает $n-$ую производную функции $y(x)$}
+ и если в какой-то точке $\xi^*$, лежащей между указанными выше нулями, она обращается в нуль,
+то $r(x)=y^(n+1)(\xi^*)/(n+1)!$. Заменяя погрешность (\ref{pogreshnost}) максимально
+возможной, получаем оценку погрешности: 
+
+$$
+\mid y(x) - \mathcal{R}_n(x) \mid \leqslant 
+\frac{M_{n+1}}{(n+1)!}\mid \omega_n(x)\mid, \hspace{1cm} M_{n+1} =max\mid y^{(n+1)}(\xi)\mid
+$$
+
+Обратим внимание, что $x$ не обязательно должно лежать в интервале $[x_0,x_n]$, а может
+лежать и вне интервала.
+
+Примерный график $\omega_n(x)$ при $n=5$
+
+\begin{circuitikz}
+\draw[domain=-0.1:5.1,samples=200] plot(\x,{1/15*\x*(\x-1.3)*(\x-2)*(\x-3)*(\x-3.7)*(\x-5)}) ;
+\draw[thin] (0,0) -- (0,-0.4) node[below left] {$x_0$};
+\draw[thin] (1.3,0) -- (1.3,-0.4) node[below] {$x_1$};
+\draw[thin] (2,0) -- (2,-0.4) node[below] {$x_2$};
+\draw[thin] (3,0) -- (3,-0.4) node[below] {$x_3$};
+\draw[thin] (3.7,0) -- (3.7,-0.4) node[below] {$x_4$};
+\draw[thin] (5,0) -- (5,-0.4) node[below right] {$x_5$};
+\draw[thin,->,>=stealth'] (-1,0) -- (7,0) node[below] {$x$}; 
+\end{circuitikz}
+
+\section{теорема о среднем(вариант)}
+Для непрерывных функций если $f(x) \in C[a,b]$ и величины $\alpha$ и $\beta$ имеют одинаковые знаки,
+то
+$$
+\alpha f(a) + \beta f(b) = (\alpha + \beta)f(\xi), \hspace{1cm} a\le\xi\le b
+$$
+
+При $f(a) = f(b)$ это очевидно. Если  $f(a) \neq f(b)$, то функция $\psi (x) = \alpha f(a) + \beta f(b) - (\alpha + \beta)f(x))$
+принимает на концах отрезка $[a,\; b]$ значения разных знаков и, следовательно, существует точка $\xi \in [a,\;b]$, в которой
+$\psi(x) =0$.
+
+
+\section{разложение по формуле Тейлора}
+Будем рассматривать класс $C_k[a,b]$ функций, имеющих на $[a,b]$ непрерывную производную $k-$го порядка. Такие функции
+разложимы по формуле Тейлора с остаточным членом в форме Лагранжа
+
+$$
+f(x) = f(a) + \frac{f^\prime(a)(x-a)}{1!} + ... + \frac{f^{(k-1)}(a)(x-a)^{k-1}}{(k-1)!}
++  \frac{f^{(k)}(\xi)(x-a)^k}{k!}
+$$   
+
+где $\xi$ -- некоторая точка из промежутка $[a,x]$.
+
+\section{линейная аппроксимация}
+
+{\bf вопрос:} для чего мы находили полином Лагранжа.
+
+{\bf ответ:} для оценки погрешности при интерполяции полиномом $n-$ой степени, где полином проходит через все точки $(x_i,\;y_i)$, 
+$i \in 1,...,n+1$. 
+В случае сплайн-интерполяции интерполяция проводится полиномом третьей степени, и есть отличие: на каждом отрезке $[x_i,x_{i+1}$ 
+полином проходит только через две точки  $(x_i,\;y_i)$ и $(x_{i+1},\;y_{i+1})$
+
+Функция $\mathcal{L}$ - кусочно-линейная функция, со значениями $f_i$ в
+точках с координатами $x_i$, иначе эта функция называется {\it интерполяциолнный сплайн первой степени} 
+
+{\it Интерполяционный сплайн} определяется условиями
+\begin{equation}
+ \mathcal{L}(x_i) = f_i,\hspace{0.5cm} i=0,...,N
+\end{equation}
+
+Геометрически он представляет собой ломанную, проходящую через точки  $(x_i,\;y_i)$, где $y_i=f_i$
+
+\begin{circuitikz}
+\begin{scope}[scale=1.5]
+\draw[thin,->] (0,0) --(4,0) node[below right] {$x {\over{I}}$};
+\draw[thin,->] (0,0) --(0,3) node[left] {$\mathcal{L}_i(x)$};
+\draw[domain=0.2:0.8] plot(\x, 1) node[below] {$(x_{i-1}, y_{i-1})$};
+\fill (0.8,1) circle(1pt);
+\draw[domain=0.8:2] plot(\x,{\x+.2})  node[above left] {($x_i, y_i)$};
+\fill (2,2.2) circle(1pt);
+\draw[domain=2:3] plot(\x,2.2)  node[above right] {($x_{i+1}, y_{i+1})$};
+\fill (3,2.2) circle(1pt);
+\draw[domain=3:3.8] plot(\x,{-\x+5.2});
+\end{scope}
+\end{circuitikz}
+
+Если обозначить $h_i = x_{i+1} - x_i$, то при $x \in [x_i,x_{i+1}]$ 
+уравнение сплайна первой степени будет иметь вид
+
+\begin{equation}
+\mathcal{L}(x) = f_i\frac{x_{i+1}-x}{h_i} + f_{i+1}\frac{x-x_i}{h_i}
+\end{equation}
+или
+\begin{equation}
+\mathcal{L}(x) = f_i + \frac{x-x_i}{h_i} (f_{i+1}-f_i)
+\end{equation}
+
+вернемся к предпоследнему рисунку на доске:
+
+\begin{circuitikz}
+\begin{scope}[scale=1.5]
+\fill (0,0) circle(2pt) node[below] {$(x_i,f_i)$} (4,2) circle(2pt)  node[right] {$(x_{i+1},f_{i+1})$};
+\draw (0,0) .. controls (0.8,1.5) and  (2,1.8) .. (4,2) node[midway,above] {$f(x)$};
+\draw[red,loosely dashed] (0,0) -- (4,2) node[midway,below] {$\mathcal{L}(x)$};
+\end{scope}
+\end{circuitikz}
+
+Получим оценку разности $\mathcal{R}(x) = \mid \mathcal{L}(x) - f(x)\mid$.
+
+
+Взяв для $\mathcal{L}$ представление при $x \in [x_i,x_{i+1}]$
+
+ $$\mathcal{L}(x) = (1-t)f_i + tf_{i+1},\hspace{1cm} \textcyrillic{где } t=(x-x_i)/h_i $$
+
+
+\begin{equation}
+\mathcal{R}(x) = \mathcal{L}(x) -  f(x) = (1-t)f_i + tf_{i+1}  -  f(x)
+\label{difference}
+\end{equation}
+
+Пусть $f(x) \in C[a,b]$ непрерывна. 
+
+применяя к выражению $(1-t)f_i + tf_{i+1} $ теорему о среднем, получаем
+
+$$
+\mathcal{R}(x) = f(\xi) - f(x),\hspace{1cm}  \xi \in [x_i,x_{i+1}].
+$$
+Следовательно, 
+$$
+\mid \mathcal{R}(x)\mid \le \omega(f),
+$$
+где 
+$\omega(f) =\max\limits_{0<i<N-1} \omega_i{f},\hspace{1cm}$ 
+и
+$\omega_i(f) =\max\limits_{x^\prime,x^{\prime\prime}\in [x_i,x_{i+i}]} 
+\mid f(x^\prime) - f(x^{\prime\prime})\mid$  
+
+
+Пусть $f(x)$ достаточно гладкая (производные нужных нам порядков непрерывны). По формуле Тейлора с
+остаточным членом в форме Лагранжа
+
+$$
+f_i = f(x) - th_if^\prime(\xi),\hspace{.5cm} f_{i+1} = f(x) + (1-t)h_if^\prime(\eta) 
+$$
+где $\xi,\eta \in [x_i,x_{i+1}]$ и $t=(x-x_i)/h_i$ 
+
+Подставив эти выражения в (\ref{difference}), получаем
+
+$$
+\mathcal{R}(x) = t(1-t)h_i\left[f^\prime(\eta)-f^\prime(\xi)\right]
+$$
+
+Следовательно,
+
+$$
+\mid \mathcal{R}(x) \mid \leqslant t(1-t)h_i\omega_i(f^\prime) \leqslant
+\frac{1}{4} \bar{h}\omega(f^\prime)
+$$
+
+последнюю оценку можно пояснить видом графика $t(1-t)$:
+
+\begin{circuitikz}
+\begin{scope}[scale=4]
+\draw[thin,->] (0,0)--(1.5,0) node[right] {t} ;
+\draw[thin,->] (0,0)--(0,0.7) ;
+\draw[thin,dashed] (0.5,0.25) --(0,0.25) node[left] {$\frac{1}{4}$};
+\draw[thin] (1,0) --(1,-0.05) node[below] {$1$};
+\draw[thin] (0.5,0) --(0.5,-0.05) node[below] {$\frac{1}{2}$};
+\draw[domain=0:1]
+plot(\x, {\x*(1-\x)});
+\end{scope}
+\end{circuitikz}
+
+
+Наконец, если функция имеет вторую непрерывную производную на отрезке $[a,b]$.
+По формуле Тейлора
+$$
+f_i = f(x) - th_if^\prime(x) + \frac{t^2x_i^2}f^{\prime\prime}(\xi),
+$$
+
+$$
+f_{i+1} = f(x) + (1-t)h_if^\prime(x) + \frac{(1-t)^2x_i^2}f^{\prime\prime}(\eta),
+$$
+
+Из формулы (\ref{difference}) следует, что
+
+$$
+\mathcal{R}(x) = (1-t)\frac{t^2h_i^2}{2}f^{\prime\prime}(\xi) +
+t\frac{(1-t)^2x_i^2}f^{\prime\prime}(\eta) 
+$$
+
+по теореме о среднем
+$$
+\mid \mathcal{R}(x) \mid \leqslant \frac{1}{2}h_i^2t(1-t)\mid f^{\prime\prime}(\xi)\mid
+\leqslant \frac{1}{8}\bar{h}^2 \mid f^{\prime\prime}(\xi)\mid
+$$
+
+
+\section{Оценки погрешности интерполяции эрмитовыми кубическими сплайнами}
+В работе \cite{spline1} приводятся оценки для функций разных классов.
+Если $S_3(x)$ эрмитов кубический сплайн интерполирует на сетке функцию f(x) то имеют место оценки
+$$
+\mid S^{(r)}_3(x) - f^{(r)}(x) \mid \leqslant \mathcal{R}_r, r=0,1,2,3
+$$
+
+Если функция достаточно гладкая, то
+$$
+\mid S^{(r)}_3(x) - f^{(r)}(x) \mid \leqslant \frac{1}{384} \bar{h}^4 \mid f^{IV}(x)\mid 
+$$
+
+где, $\bar{h} = \left| x_{\tiny{\begin{array}{l}\textcyrillic{точка, в которой}\\ \textcyrillic{вычисляется}\\ \textcyrillic{погрешность}\end{array}}} -
+x_{\scriptstyle\tiny{{\textcyrillic{ближайшее }i}}}\right|$
+ 
+
+
+\printbibliography
+\end{document}
