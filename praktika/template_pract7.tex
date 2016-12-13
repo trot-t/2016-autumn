@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tikz}
+\usepackage[european,cuteinductors,smartlabels]{circuitikz}
+\usepackage{siunitx}
+\title{Практическая работа №6}
+\author{студент:    группы    }
+% Конец преамбулы
+\begin{document}
+\maketitle
+
+\begin{tikzpicture}
+	\draw (0,0) to[sV=\SI{220}{volt},l_={V}] (0,4) to[L,l={L}] (4,4);  
+	\draw (4,2) node[nigbt](s11) {} (s11.E) to[short] (4,0) (s11.C) to[short] (4,4);
+	\draw (0,0) to[short] (4,0);
+\end{tikzpicture}
+
+\begin{tikzpicture} 
+\newcommand{\D}{5}
+\foreach \f in {0, 5, 10, 15, 20, 25, 30} 
+	\draw[red,->,>=stealth'] (0,0) -- ({\D*cos(\f)},{\D*sin(\f)}) node[right] {$\f$}; 
+\end{tikzpicture}
+\end{document}
