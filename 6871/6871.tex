@@ -33,7 +33,8 @@
 
 %\title{Список группы}
 %\date{}
-
+%abcdefghijklmnop
+%         .
 
 \newcommand*\OK{&\small \ding{51}$\!\!_\circ$} % начал защищать
 \newcommand*\Ok{&\small \ding{51}$\!\!_\circ$} % начал защищатi
@@ -55,6 +56,11 @@
 \newcommand*\de{&{\small\ding{48}$\!\!_5$}} % защита, defend
 \newcommand*\dE{&{\small\ding{48}$\!\!^4_5$}} % защита, defend
 \newcommand*\cd{&{\small\ding{48}$\!\!^3_4$}} % защита, defend
+\newcommand*\dg{&{\small\ding{48}$\!\!_6$}} % защита, defend
+\newcommand*\fg{&{\small\ding{48}$\!\!^6_7$}} % защита, defend
+\newcommand*\dH{&{\small\ding{48}$\!\!^8$}} % защита, defend
+\newcommand*\gh{&{\small\ding{48}$\!\!^7_8$}} % защита, defend
+\newcommand*\fh{&{\small\ding{48}$\!\!^7_{89}$}} % защита, defend
 \newcommand*\Skip{\noindent\rule{0.3cm}{0.9pt}}
 
 
@@ -69,8 +75,8 @@
 %\maketitle
 %\skippage 
 %\begin{table} \centering 
-\hspace{-5cm}
-\begin{tabular}{l|l|cccccccccrccccccccccccccccc}% @{}}
+\hspace{-6cm}
+	\begin{tabular}{p{7pt}|l|p{6pt}p{6pt}cp{6pt}cccccrcccccccccccccccccccc}% @{}}
 %\multicolumn{19}{c}{График выполнения лабораторных работ студентами 6871 группы} \\
 \multicolumn{24}{c}{Ведомость посещения занятий по инфоматике студентами 6871 группы} \\
 \toprule
@@ -108,62 +114,65 @@
 &\rotatebox{90}{\rlap{\small 29 ноября (№6 прак.)}}
 &\rotatebox{90}{\rlap{\small 5 декабря (лаб.)}}
 &\rotatebox{90}{\rlap{\small 6 декабря (лек.)}}
+&\rotatebox{90}{\rlap{\small 13 декабря (лаб.)}}
+&\rotatebox{90}{\rlap{\small 13 декабря (№7 прак.)}}
+&\rotatebox{90}{\rlap{\small 19 декабря (лаб.)}}
 \\
 \midrule
- 1&Аникин Е.А.     \ok\ok\no\ok\no&30\no\no\OK& 55\no\no\no \no\no\no\no\no\no\no& 4\no\ok\da& 8\no\no\\ 
- 2&Басаревский Д.В.\ok\ok\ok\ok\no\no\da\ok\ok&110\ok\no\ok& 9a\no\no\no\no\no\no&2a\ok\ok\ok&30\Ok\no\\
- 3&Бочкарёва Е.А.  \ok\ok\ok\ok\OK\ok\ab\ok\OK& 85\dc\no\ok&11a\de\ok\Ok\ok\Ok\no& 5\Ok\no\ok& 7\Ok\no\\
- 4&Вайман А.И.     \no\no\no\ok\OK&07\ok\ok\OK&110\da\ok\ok&  5\db\ok\Ok\ok\db\ok&8a\dc\ok\dE&19\Ok\ok\\
- 5&Веренев А.А.    \no\no\no\no\ok\no\no\ok\ok \no\no\no\no \no\ok\no\no\no\no\no&3a\ok\ok\no&11\no\no\\
- 6&Гусманова Л.Р.  \ok\ok\da\ok\no\no\no\no\no \no\no\no\no \no\no\no\no\no\no\no\no\no\no\no\no\no\no\\
- 7&Журавлев А.Ю.   \no\no\no\no\ok&12\ok\ok\OK&105\da\ok\Ok&  2\Ok\ok\db\ok\dc\no\no\dd\ok\de&18\Ok\ok\\
- 8&Кочкин Д.А.     \no\no\no\no\ok\ok\no\ok\no \no\Ok\no\da& 10\no\no\db\ok\Ok\no\no\no\no\ok&10\no\no\\
- 9&Кудрявцев М.В.  \no\no\ok\ok\no\no\no\ok\ok& 80\ok\ok\no \no\no\no\no\no\no\no\no\no\no\ok&18\no\no\\
-10&Лебедев П.Г.    \ok\ok\no\ok\ok&31\no\ok\no \no\no\no\no \no\no\ok\ok\ok\no\no\no\no\no\no\no\no\no\\
-11&Макеев Л.А.     \ok\ok\ok\ok\OK&05\ok\ok\ok& 80\Ok\ok\da&  4\ok\ok\ok\ok\no\ok&5a\Ok\ok\no\no\Ok\ok\\
+ 1\,&Аникин Е.А.      \ok\ok\no\ok\no&30\no\no\OK& 55\no\no\no \no\no\no\no\no\no\no& 4\no\ok\da& 8\no\no\no\no\no\\ 
+ 2\,&Басаревский Д.В\,\ok\ok\ok\ok\no\no\da\ok\ok&110\ok\no\ok& 9a\no\no\no\no\no\no&2a\ok\ok\ok&30\da\no\db\ok\db\\
+ 3\,&Бочкарёва Е.А.   \ok\ok\ok\ok\OK\ok\ab\ok\OK& 85\dc\no\ok&11a\de\ok\Ok\ok\Ok\no& 5\Ok\no\ok& 7\Ok\no\ok\ok\gh\\
+ 4\,&Вайман А.И.      \no\no\no\ok\OK&07\ok\ok\OK&110\da\ok\ok&  5\db\ok\Ok\ok\db\ok&8a\dc\ok\dE&19\Ok\ok\ok\ok\dg\\
+ 5\,&Веренев А.А.     \no\no\no\no\ok\no\no\ok\ok \no\no\no\no \no\ok\no\no\no\no\no&3a\ok\ok\no&11\no\no\no\no\no\\
+ 6\,&Гусманова Л.Р.   \ok\ok\da\ok\no\no\no\no\no \no\no\no\no \no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\\
+ 7\,&Журавлев А.Ю.    \no\no\no\no\ok&12\ok\ok\OK&105\da\ok\Ok&  2\Ok\ok\db\ok\dc\no\no\dd\ok\de&18\Ok\ok\Ok\ok\Ok\\
+ 8\,&Кочкин Д.А.      \no\no\no\no\ok\ok\no\ok\no \no\Ok\no\da& 10\no\no\db\ok\Ok\no\no\no\no\ok&10\no\no\ok\ok\no\\
+ 9\,&Кудрявцев М.В.   \no\no\ok\ok\no\no\no\ok\ok& 80\ok\ok\no \no\no\no\no\no\no\no\no\no\no\ok&18\no\no\no\no\no\\
+10\,&Лебедев П.Г.     \ok\ok\no\ok\ok&31\no\ok\no \no\no\no\no \no\no\ok\ok\ok\no\no\no\no\no\no\no\no\no\no\no\no\\
+11\,&Макеев Л.А.      \ok\ok\ok\ok\OK&05\ok\ok\ok& 80\Ok\ok\da&  4\ok\ok\ok\ok\no\ok&5a\Ok\ok\no\no\Ok\ok\bc\ok\de\\
 \midrule
-12&Михайлов С.А.   \no\no\ok\ok\ok&21\no\ok\ok&125\ok\ok\da& 1a\ok\ok\ok\ok\Ok\ok&9a\dc\ok\dd& 9\Ok\ok\\
-13&Осокина С.С.    \ok\ok\ok\ok\no\no\ok\ok\OK&115\da\no\Ok&10a\ok\no\ok\no\Ok\no&1a\no\ok\ok&31\dE\no\\
-14&Семёнов С.Н.    \ok\ok\ok\ok\OK&04\ok\ok\OK&100\ab\ok\ok& 12\db\no\Ok\ok\Ok\ok& 3\no\ok\dE&15\de\no\\
-15&Силаев Р.О.     \ok\ok\no\no\no\no\no\no\ok& 60\da\ok\no \no\db\no\ok\no\no\no\no\no\no\no\no\no\no\\
-16&Синицин А.В.    \ok\ok\no\ok\no\no\no\no\no \no\no\no\no \no\no\no\no\no\no\no\no\no\no\no\no\no\no\\
-17&Терентьев А.И.  \ok\ok\ok\ok\no\no\no\no\ok&120\no\no\no \no\no\no\no\no\no\no\no\no\no\no\no\no\no\\
-18&Увин С.С.       \ok\ok\ok\ok\OK&06\da\ok\OK& 95\bd\ok\de& 11\ok\ok\Ok\ok\Ok\ok& 1\Ok\ok\ok&16\Ok\ok\\
-19&Фесько В.В.     \no\no\no\no\no\no\no\no\no \no\no\no\no \no\no\no\no\no\no\no\no\no\no\no\no\no\no\\
-20&Фролов С.С.     \ok\ok\ok\ok\OK&16\ac\ok\OK&115\ok\ok\dd&  3\de\ok\ok\ok\Ok\no& 2\Ok\ok\ok& 6\ok\ok\\ 
-21&Шкуридин И.С.   \ok\ok\ok\ok\ok\no\ok\ok\OK& 85\ok\ok\no \no\ok\no\no\no\no\ok\no\no\no\no\no\no\no\\
-22&Яценко А.В.     \ok\ok\ok\ok\OK&03\ok\ok\ok& 50\ok\ok\da&  1\Ok\no\no\no\no\ok\no\no\no\no\no\no\no\\ 
+12\,&Михайлов С.А.    \no\no\ok\ok\ok&21\no\ok\ok&125\ok\ok\da& 1a\ok\ok\ok\ok\Ok\ok&9a\dc\ok\dd& 9\Ok\ok\dd\ok\Ok\\
+13\,&Осокина С.С.     \ok\ok\ok\ok\no\no\ok\ok\OK&115\da\no\Ok&10a\ok\no\ok\no\Ok\no&1a\no\ok\ok&31\dE\no\dg\ok\ok\\
+14\,&Семёнов С.Н.     \ok\ok\ok\ok\OK&04\ok\ok\OK&100\ab\ok\ok& 12\db\no\Ok\ok\Ok\ok& 3\no\ok\dE&15\de\no\ok\no\ok\\
+15\,&Силаев Р.О.      \ok\ok\no\no\no\no\no\no\ok& 60\da\ok\no \no\db\no\ok\no\no\no\no\no\no\no\no\no\no\no\no\no\\
+16\,&Синицин А.В.     \ok\ok\no\ok\no\no\no\no\no \no\no\no\no \no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\\
+17\,&Терентьев А.И.   \ok\ok\ok\ok\no\no\no\no\ok&120\no\no\no \no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\\
+18\,&Увин С.С.        \ok\ok\ok\ok\OK&06\da\ok\OK& 95\bd\ok\de& 11\ok\ok\Ok\ok\Ok\ok& 1\Ok\ok\ok&16\Ok\ok\ok\ok\ok\\
+19\,&Фесько В.В.      \no\no\no\no\no\no\no\no\no \no\no\no\no \no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\no\\
+20\,&Фролов С.С.      \ok\ok\ok\ok\OK&16\ac\ok\OK&115\ok\ok\dd&  3\de\ok\ok\ok\Ok\no& 2\Ok\ok\ok& 6\ok\ok\fg\ok\gh\\ 
+21\,&Шкуридин И.С.    \ok\ok\ok\ok\ok\no\ok\ok\OK& 85\ok\ok\no \no\ok\no\no\no\no\ok\no\no\no\no\no\no\no\no\no\no\\
+22\,&Яценко А.В.      \ok\ok\ok\ok\OK&03\ok\ok\ok& 50\ok\ok\da&  1\Ok\no\no\no\no\ok\no\no\no\no\no\no\no\no\no\no\\ 
 \bottomrule
 \end{tabular} 
 \newpage
 
-\begin{tabular}{l|cccccc}
+\begin{tabular}{l|ccccccc}
 \multicolumn{4}{c}{выполнение практических работ, 6871 группа} \\
 \toprule
-                &пр.№1&пр.№2&пр.№3&пр.№4&пр.№5&  пр.№6\\
+		&пр.№1&пр.№2&пр.№3&пр.№4&пр.№5&  пр.№6& пр.№7\\
 \midrule
-Аникин Е.А.     &     &     &     &     &     &\\    
-Басаревский Д.В.&     &21.10&     &     &     &\\
-Бочкарёва Е.А.  &27.09&20.10&07.11&08.12&     &\\
-Вайман А.И.     &02.10&$-$  &12.11&  .  &10.12&\\
-Веренев А.А.    &     &     &     &     &     &\\
-Гусманова Л.Р.  &     &     &     &     &     &\\
-Журавлев А.Ю.   &25.09&10.10&  .  &06.12&     &\\
-Кочкин Д.А.     &14.10&     &     &     &     &\\
-Кудрявцев М.В.  &     &     &     &     &     &\\
-Лебедев П.Г.    &     &     &     &     &     &\\
-Макеев Л.А.     &07.11&     &     &     &     &\\
-Михайлов С.А.   &01.10&     &     &     &     &\\
-Осокина С.С.    &     &19.10&     &     &     &\\
-Семёнов С.Н.    &02.10&21.11&$-2 $&     &     &\\
-Силаев Р.О.     &24.10&24.10&  .  &     &     &\\
-Синицин А.В.    &     &     &     &     &     &\\
-Терентьев А.И.  &     &     &     &     &     &\\
-Увин С.С.       &28.09&17.10&07.11$-2$&08.12&07.12&\\
-Фесько В.В.     &     &     &     &     &     &\\
-Шкуридин И.С.   &     &     &     &     &     &\\
-Яценко А.В.     &     &08.11&     &     &     &\\
-Фролов С.С.     &02.10&01.11&15.11&     &     &\\
+	Аникин Е.А.     &     &     &     &     &     &&\\    
+	Басаревский Д.В.&     &21.10& $-2$&     &     &&\\
+	Бочкарёва Е.А.  &27.09&20.10&07.11&08.12&19.12&&19.12\\
+	Вайман А.И.     &02.10&$-$  &12.11& $-2$&10.12&&\\
+	Веренев А.А.    &     &     &     &     &     &&\\
+	Гусманова Л.Р.  &     &     &     &     &     &&\\
+	Журавлев А.Ю.   &25.09&10.10&  .  &06.12&     &&\\
+	Кочкин Д.А.     &14.10&     &     &     &     &&\\
+	Кудрявцев М.В.  &     &     &     &     &     &&\\
+	Лебедев П.Г.    &     &     &     &     &     &&\\
+	Макеев Л.А.     &07.11&  .  &  .  &     &     &&\\
+	Михайлов С.А.   &01.10&     &     &     &     &&\\
+	Осокина С.С.    &     &19.10&     &     &     &&\\
+	Семёнов С.Н.    &02.10&21.11&$-2 $&     &     &&\\
+	Силаев Р.О.     &24.10&24.10&  .  &     &     &&\\
+	Синицин А.В.    &     &     &     &     &     &&\\
+	Терентьев А.И.  &     &     &     &     &     &&\\
+	Увин С.С.       &28.09&17.10&07.11$-2$&08.12&07.12&&\\
+	Фесько В.В.     &     &     &     &     &     &&\\
+	Шкуридин И.С.   &     &     &     &     &     &&\\
+	Яценко А.В.     &     &08.11&     &     &     &&\\
+	Фролов С.С.     &02.10&01.11&15.11&     &     &&\\
 \bottomrule
 \end{tabular}
 \end{document}
